@@ -17,7 +17,7 @@ jobs:
           python-verion: '3.13'
 
       - name: ejecutar test unitario
-        run: python -m test_analitza_logs.py -v
+        run: python -m unittest -v test_analitza_logs.py
 
   test-mac:
     runs-on: macos-latest
@@ -31,7 +31,7 @@ jobs:
           python-verion: '3.13'
 
       - name: ejecutar test unitario
-        run: python -m test_analitza_logs.py -v
+        run: python3 -m test_analitza_logs.py -v
 
   test-win:
     runs-on: windows-latest
@@ -45,5 +45,5 @@ jobs:
           python-verion: '3.12'
 
       - name: ejecutar test unitario
-        run: python -m test_analitza_logs.py -v
+        run: python -m test_analitza_logs -v
 
