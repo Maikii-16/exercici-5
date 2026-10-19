@@ -1,0 +1,49 @@
+name: Test de la app
+
+on:
+  push:
+    branches:  [main]
+
+jobs:
+  test-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repo
+        uses: actions/checkout@v6
+
+      - name: Configuracion de  python
+        uses: actions/setup-python@v6
+        with:
+          python-verion: '3.13'
+
+      - name: ejecutar test unitario
+        run: python -m test_analitza_logs.py -v
+
+  test-mac:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout del repo
+        uses: actions/checkout@v6
+
+      - name: Configuracion de  python
+        uses: actions/setup-python@v6
+        with:
+          python-verion: '3.13'
+
+      - name: ejecutar test unitario
+        run: python -m test_analitza_logs.py -v
+
+  test-win:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout del repo
+        uses: actions/checkout@v6
+
+      - name: Configuracion de  python
+        uses: actions/setup-python@v6
+        with:
+          python-verion: '3.12'
+
+      - name: ejecutar test unitario
+        run: python -m test_analitza_logs.py -v
+
